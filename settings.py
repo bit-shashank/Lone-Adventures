@@ -1,8 +1,9 @@
 #Game level settings
 
 TITLE='Lone Adventure'
-WIDTH=1000
-HEIGHT=600
+WIDTH=640
+HEIGHT=640
+TILESIZE=32
 FPS=60
 
 

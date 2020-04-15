@@ -1,7 +1,9 @@
 import pygame as pg
 import random
 from settings import *
-from player import *
+from sprites import *
+from map import *
+
 
 class Game:
     def __init__(self):
@@ -17,6 +19,7 @@ class Game:
         #and start a new game by calling run method
         self.all_sprits=pg.sprite.Group()
         self.player=Player(self,WIDTH//2,HEIGHT//2)
+        self.map=Map(self)
         self.all_sprits.add(self.player)
         self.run()
         

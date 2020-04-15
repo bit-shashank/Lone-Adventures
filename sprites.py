@@ -5,6 +5,7 @@ import pygame as pg
 from settings import *
 
 
+
 class Player(pg.sprite.Sprite):
 
     walk_frames=[]
@@ -21,6 +22,7 @@ class Player(pg.sprite.Sprite):
     def __init__(self,game,x,y):
         self.loadAssets()
         pg.sprite.Sprite.__init__(self)
+        self.groups=game.all_sprits
         self.game=game
         self.last_update=0
         self.currentFrame=0
@@ -150,3 +152,21 @@ class Player(pg.sprite.Sprite):
 
         path='Assets/isometric_Mini-Crusader/jump/'
         self.jump_frames=tools.load_all_gfx(path,pg,accept=('.png'))
+
+
+
+class Ground(pg.sprite.Sprite):
+    def __init__(self, game, map,x, y):
+        self.groups = game.all_sprits
+        self.map=map
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.image=map.groundTile
+        self.rect = self.image.get_rect()
+        self.x=x*TILESIZE
+        self.y=y*TILESIZE
+        (isoX,isoY)=tools.cartToiso(self.x,self.y)
+        self.x = isoX
+        self.y = isoY
+        self.rect.x =self.x
+        self.rect.y = self.y
