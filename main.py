@@ -14,6 +14,7 @@ class Game:
         self.clock=pg.time.Clock()
         self.running=True
 
+
     def new(self):
         #Init all the sprits
         #and start a new game by calling run method
@@ -34,6 +35,7 @@ class Game:
 
     def update(self):
         self.all_sprits.update()
+        self.map.update()
 
     def events(self):
         for event in pg.event.get():

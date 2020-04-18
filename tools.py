@@ -1,12 +1,14 @@
 import os
+from settings import *
 
-def load_all_gfx(directory,pg,accept=(".png",".jpg",".bmp")):
+def load_all_gfx(directory,pg,accept=(".png",".jpg",".bmp"),width=TILESIZE,height=TILESIZE):
     graphics = []
     for pic in os.listdir(directory):
         if  os.path.isfile(os.path.join(directory, pic)):
             name,ext = os.path.splitext(pic)
             if ext.lower() in accept:
                 img = pg.image.load(os.path.join(directory,pic))
+                img= pg.transform.scale(img, (width, height)).convert_alpha()
                 graphics.append(img)
     return graphics
 

@@ -10,6 +10,8 @@ class Map:
         self.game=game
         rows=HEIGHT//TILESIZE
         cols=WIDTH//TILESIZE
+        self.offX=0
+        self.offY=0
         for i in range(rows):
             self.data.append([0]*cols)
 
@@ -22,3 +24,16 @@ class Map:
         for row,tiles in enumerate(self.data):
             for col,tile in enumerate(tiles):
                 Ground(self.game,self,col,row)
+
+    def update(self):
+        self.offX=0
+        self.offY=0
+        keys=pg.key.get_pressed()
+        if keys[pg.K_LEFT]:
+            self.offX=1
+        if keys[pg.K_RIGHT]:
+            self.offX=-1
+        if keys[pg.K_UP]:
+            self.offY=1
+        if keys[pg.K_DOWN]:
+            self.offY=-1
