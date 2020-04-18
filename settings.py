@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Game level settings
 
 TITLE='Lone Adventure'
@@ -8,7 +9,14 @@ FPS=60
 
 
 
+=======
+# Game level settings
+>>>>>>> a1f6305af4919579eda49c3cedf494f1d4e504db
 
+TITLE = 'Lone Adventure'
+WIDTH = 1000
+HEIGHT = 600
+FPS = 60
 
 # Define some colors
 BLACK = (0, 0, 0)

@@ -5,28 +5,36 @@ from sprites import *
 from map import *
 
 
+
 class Game:
     def __init__(self):
-        #init the game window ,clock and starts the game
+        # init the game window ,clock and starts the game
         pg.init()
-        self.screen=pg.display.set_mode((WIDTH,HEIGHT))
+        self.screen = pg.display.set_mode((WIDTH, HEIGHT))
         pg.display.set_caption(TITLE)
-        self.clock=pg.time.Clock()
-        self.running=True
+        self.clock = pg.time.Clock()
+        self.running = True
 
 
     def new(self):
+<<<<<<< HEAD
         #Init all the sprits
         #and start a new game by calling run method
         self.all_sprits=pg.sprite.Group()
         self.player=Player(self,WIDTH//2,HEIGHT//2)
         self.map=Map(self)
+=======
+        # Init all the sprits
+        # and start a new game by calling run method
+        self.all_sprits = pg.sprite.Group()
+        self.player = Player(self, WIDTH // 2, HEIGHT // 2)
+>>>>>>> a1f6305af4919579eda49c3cedf494f1d4e504db
         self.all_sprits.add(self.player)
         self.run()
-        
+
     def run(self):
-        #starts a new game loop 
-        self.playing=True
+        # starts a new game loop
+        self.playing = True
         while self.playing:
             self.clock.tick(FPS)
             self.events()
@@ -41,8 +49,8 @@ class Game:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 if self.playing:
-                    self.playing=False
-                self.running=False
+                    self.playing = False
+                self.running = False
 
     def draw(self):
         self.screen.fill(BLACK)
@@ -55,7 +63,8 @@ class Game:
     def show_go_screen(self):
         pass
 
-g=Game()
+
+g = Game()
 g.show_start_screen()
 while g.running:
     g.new()
