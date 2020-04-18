@@ -1,13 +1,9 @@
-#Game level settings
+# Game level settings
 
-TITLE='Lone Adventure'
-WIDTH=1000
-HEIGHT=600
-FPS=60
-
-
-
-
+TITLE = 'Lone Adventure'
+WIDTH = 1000
+HEIGHT = 600
+FPS = 60
 
 # Define some colors
 BLACK = (0, 0, 0)
