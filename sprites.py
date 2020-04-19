@@ -158,8 +158,8 @@ class Ground(pg.sprite.Sprite):
         self.game = game
         self.image=map.groundTile
         self.rect = self.image.get_rect()
-        self.x=x*TILESIZE+map.offX
-        self.y=y*TILESIZE+map.offY
+        self.x=x*TILESIZE*0.6+map.offX
+        self.y=y*TILESIZE*0.6+map.offY
         (isoX,isoY)=tools.cartToiso(self.x,self.y)
         self.x = isoX
         self.y = isoY

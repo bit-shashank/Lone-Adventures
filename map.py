@@ -8,8 +8,8 @@ class Map:
     def __init__(self,game):
         self.data=[]
         self.game=game
-        rows=HEIGHT//TILESIZE
-        cols=WIDTH//TILESIZE
+        rows=50
+        cols=50
         self.offX=0
         self.offY=0
         for i in range(rows):
@@ -30,10 +30,10 @@ class Map:
         self.offY=0
         keys=pg.key.get_pressed()
         if keys[pg.K_LEFT]:
-            self.offX=1
+            self.offX=5
         if keys[pg.K_RIGHT]:
-            self.offX=-1
+            self.offX=-5
         if keys[pg.K_UP]:
-            self.offY=1
+            self.offY=5
         if keys[pg.K_DOWN]:
-            self.offY=-1
+            self.offY=-5
