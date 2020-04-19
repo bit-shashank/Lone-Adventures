@@ -20,7 +20,6 @@ class Player(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self.loadAssets()
         pg.sprite.Sprite.__init__(self)
-<<<<<<< HEAD:sprites.py
         self.groups=game.all_sprits
         self.game=game
         self.last_update=0
@@ -42,27 +41,6 @@ class Player(pg.sprite.Sprite):
     def show(self):
         self.animate()
 
-=======
-        self.game = game
-        self.last_update = 0
-        self.currentFrame = 0
-        self.image = self.idle_frames[0].convert()
-        self.rect = self.image.get_rect()
-        self.x = x
-        self.y = y
-        self.dx = 0
-        self.dy = 0
-        self.walking = False
-        self.idle = True
-        self.attacking = False
-        self.running = False
-
-    def show(self):
-        (isoX, isoY) = tools.cartToiso(self.x, self.y)
-        self.animate()
-        self.rect.x = isoX
-        self.rect.y = isoY
->>>>>>> a1f6305af4919579eda49c3cedf494f1d4e504db:player.py
 
     def animate(self):
         now = pg.time.get_ticks()
@@ -158,7 +136,6 @@ class Player(pg.sprite.Sprite):
     '''
 
     def loadAssets(self):
-<<<<<<< HEAD:sprites.py
         path='Assets/isometric_Mini-Crusader/walk/'
         self.walk_frames=tools.load_all_gfx(path,pg,accept=('.png'),width=128,height=150)
     
@@ -193,16 +170,3 @@ class Ground(pg.sprite.Sprite):
     def update(self):
         self.rect.x+=self.map.offX
         self.rect.y+=self.map.offY
-=======
-        path = 'Assets/isometric_Mini-Crusader/walk/'
-        self.walk_frames = tools.load_all_gfx(path, pg, accept=('.png'))
-
-        path = 'Assets/isometric_Mini-Crusader/idle/'
-        self.idle_frames = tools.load_all_gfx(path, pg, accept=('.png'))
-
-        path = 'Assets/isometric_Mini-Crusader/attack/'
-        self.attack_frames = tools.load_all_gfx(path, pg, accept=('.png'))
-
-        path = 'Assets/isometric_Mini-Crusader/jump/'
-        self.jump_frames = tools.load_all_gfx(path, pg, accept=('.png'))
->>>>>>> a1f6305af4919579eda49c3cedf494f1d4e504db:player.py

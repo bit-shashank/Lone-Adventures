@@ -17,18 +17,11 @@ class Game:
 
 
     def new(self):
-<<<<<<< HEAD
         #Init all the sprits
         #and start a new game by calling run method
         self.all_sprits=pg.sprite.Group()
         self.player=Player(self,WIDTH//2,HEIGHT//2)
         self.map=Map(self)
-=======
-        # Init all the sprits
-        # and start a new game by calling run method
-        self.all_sprits = pg.sprite.Group()
-        self.player = Player(self, WIDTH // 2, HEIGHT // 2)
->>>>>>> a1f6305af4919579eda49c3cedf494f1d4e504db
         self.all_sprits.add(self.player)
         self.run()
 
