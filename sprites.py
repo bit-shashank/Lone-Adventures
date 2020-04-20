@@ -150,13 +150,13 @@ class Player(pg.sprite.Sprite):
 
 
 
-class Ground(pg.sprite.Sprite):
-    def __init__(self, game, map,x, y):
+class Obstacle(pg.sprite.Sprite):
+    def __init__(self, game,image, map,x, y):
         self.groups = game.all_sprits
         self.map=map
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.image=map.groundTile
+        self.image=image
         self.rect = self.image.get_rect()
         self.x=x*TILESIZE*0.6+map.offX
         self.y=y*TILESIZE*0.6+map.offY

@@ -14,19 +14,24 @@ class Map:
         self.offY=0
         for i in range(rows):
             self.data.append([0]*cols)
-
+        
         self.data[5][5]=1
         self.data[10][5]=1
 
         self.images=load_all_gfx('Assets//Voxel Isometric enviroment//',pg,accept=('.png'))
         self.groundTile=self.images[15]
         self.groundTile = pg.transform.scale(self.groundTile, (TILESIZE, TILESIZE)).convert_alpha()
+        self.tree=self.images[4]
+        self.tree = pg.transform.scale(self.tree, (TILESIZE*3, TILESIZE*3)).convert_alpha()
         self.show()
 
     def show(self):
         for row,tiles in enumerate(self.data):
             for col,tile in enumerate(tiles):
-                Ground(self.game,self,col,row)
+                if tile==0:
+                    Obstacle(self.game,self.groundTile,self,col,row)
+                if tile==1:
+                    Obstacle(self.game,self.tree,self,col,row)
 
     def update(self):
         self.offX=0
