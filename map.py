@@ -15,6 +15,9 @@ class Map:
         for i in range(rows):
             self.data.append([0]*cols)
 
+        self.data[5][5]=1
+        self.data[10][5]=1
+
         self.images=load_all_gfx('Assets//Voxel Isometric enviroment//',pg,accept=('.png'))
         self.groundTile=self.images[15]
         self.groundTile = pg.transform.scale(self.groundTile, (TILESIZE, TILESIZE)).convert_alpha()
